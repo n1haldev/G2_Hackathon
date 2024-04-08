@@ -2,9 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36'}
+
 # Function to extract data from a webpage
 def extract_data(url):
-    response = requests.get(url)
+    response = requests.get(url, headers=headers)
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -49,6 +51,7 @@ def extract_urls(url, company_domain):
 def main():
     url = 'https://aim-agency.com/'   # input url
     company_domain = 'aim-agency.com'
+
 
     # Extract internal URLs from the main page
     internal_urls = extract_urls(url, company_domain)
