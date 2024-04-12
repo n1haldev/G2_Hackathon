@@ -22,7 +22,7 @@ def main():
         st.image("https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1233ef954d868794f19ce75837789fe8/g2.png", width=150)  # Replace with your logo URL
 
     # Team name with padding
-    st.markdown("<h1 style='text-align: left; padding-left:500px;'>Team Name: Req&Res</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: left; padding-left:500px;'>Team Name: Req&Resp</h1>", unsafe_allow_html=True)
 
 
     st.markdown("<h1 style='text-align: left; padding-left:430px;'>Product Description Generator</h2>", unsafe_allow_html=True)
