@@ -16,19 +16,17 @@ def get_summary_from_server(url):
 def main():
     st.set_page_config(page_title='Req&Res', page_icon=None, layout='wide', initial_sidebar_state='auto')
 
-    # Background image CSS
-    background_image = '''
-    <style>
-    body {
-        background-image: url("https://example.com/path/to/your/image.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    </style>
-    '''
-    st.markdown(background_image, unsafe_allow_html=True)
+    # Streamlit logo with padding
+    col1, col2, col3 = st.columns([1, 20, 1])
+    with col2:
+        st.image("https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1233ef954d868794f19ce75837789fe8/g2.png", width=150)  # Replace with your logo URL
 
-    st.title('Product Description Generator')
+    # Team name with padding
+    st.markdown("<h1 style='text-align: left; padding-left:500px;'>Team Name: Req&Res</h1>", unsafe_allow_html=True)
+
+
+    st.markdown("<h1 style='text-align: left; padding-left:430px;'>Product Description Generator</h2>", unsafe_allow_html=True)
+    # st.title('Product Description Generator')
 
     # Input URL from user
     url = st.text_input('Enter URL:', 'https://aim-agency.com/')  # Default URL
