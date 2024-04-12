@@ -10,7 +10,7 @@ This is a web application that generates product descriptions by summarizing tex
 
 ## Installation
 
-1. Clone the repository:
+Clone the repository:
 https://github.com/n1haldev/G2_Hackathon
 ```bash
 git clone https://github.com/n1haldev/G2_Hackathon.git
