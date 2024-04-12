@@ -30,6 +30,8 @@ Run the flask backend Server
 ```bash
 python server.py
 ```
+Note : Use python3 on linux machine
+
 Run streamlit in new terminal
 ```bash
 streamlit run frontend.py
