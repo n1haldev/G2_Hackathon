@@ -12,22 +12,22 @@ class WebScraper:
             if response.status_code == 200 or response.status_code == 201:
                 soup = BeautifulSoup(response.content, 'html.parser')
 
-                # Extract data only from the main tag
-                main_tag = soup.find('main')
-                if main_tag:
-                    extracted_data = {}
-                    for tag_name in ['p', 'span']:
-                        tags = main_tag.find_all(tag_name)
-                        tag_data = []
-                        for tag in tags:
-                            tag_text = tag.get_text(strip=True)
-                            tag_data.append(tag_text)
-                        extracted_data[tag_name] = tag_data
-                    # print(extracted_data)
-                    return extracted_data
-                else:
-                    print("Main tag not found on the page.")
-                    return None
+                # # Extract data only from the main tag
+                # main_tag = soup.find('main')
+                # if main_tag:
+                extracted_data = {}
+                for tag_name in ['p', 'span']:
+                    tags = soup.find_all(tag_name)
+                    tag_data = []
+                    for tag in tags:
+                        tag_text = tag.get_text(strip=True)
+                        tag_data.append(tag_text)
+                    extracted_data[tag_name] = tag_data
+                # print(extracted_data)
+                return extracted_data
+                # else:
+                #     print("Main tag not found on the page.")
+                #     return None
             else:
                 print(f"Failed to retrieve data from {url}")
                 return None

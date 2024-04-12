@@ -75,7 +75,20 @@ def scrape_preprocess_and_summarize():
         return jsonify({'Summarized Text': summarized_text.text}), 200
 
     else:
-        return jsonify({'error': 'No internal URLs found on the page.'}), 404
+        data = scraper.extract_data(url)
+        if data:
+            for _, data_list in data.items():
+                # file.write(f"Data from <{tag_name}> tags:\n")
+                for data_item in data_list:
+                    print(data_item + "\n")
+                    text_data += data_item + "\n"
+                    # file.write(data_item + '\n')
+                # file.write('\n')
+        # return jsonify({'error': 'No internal URLs found on the page.'}), 404
+        summarized_text = summarizer.summarize_text(text_data, url)
+        print(summarized_text.text)
+        return jsonify({'Summarized Text': summarized_text.text}), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True)

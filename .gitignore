@@ -1,3 +1,4 @@
 env
 .env
 llama/
+__pycache__/
