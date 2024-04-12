@@ -21,6 +21,11 @@ Navigate to the project directory:
 cd G2_Hackathon
 ```
 
+Install the required python dependencies:
+```bash
+pip3 install -r requirements.txt
+```
+
 Run the flask backend Server
 ```bash
 python server.py
